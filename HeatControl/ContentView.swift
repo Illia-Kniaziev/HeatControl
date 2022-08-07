@@ -32,6 +32,30 @@ struct TitleView: View {
     }
 }
 
+struct PeakTempView: View {
+    let label: String
+    @Binding var peakTemp: Int
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            Text("\(label): ")
+                .foregroundColor(.secondary)
+                .font(.system(size: 12, weight: .bold, design: .monospaced))
+            
+            if peakTemp <= 1 {
+                Text("-")
+                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+            } else {
+                RollingText(fontSize: 12, weight: .semibold, design: .monospaced, value: $peakTemp)
+            }
+            
+            Text("°C")
+                .foregroundColor(.secondary)
+                .font(.system(size: 12, weight: .bold, design: .monospaced))
+        }
+    }
+}
+
 struct TempView: View {
     @State private var temp = 0
     @State private var minTemp = Int.max
@@ -63,39 +87,9 @@ struct TempView: View {
         HStack(alignment: .center, spacing: 40) {
             Spacer()
             
-            HStack(spacing: 0) {
-                Text("min: ")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                
-                if minTemp == 0 {
-                    Text("-")
-                        .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                } else {
-                    RollingText(fontSize: 12, weight: .semibold, design: .monospaced, value: $minTemp)
-                }
-                
-                Text("°C")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-            }
-
-            HStack(spacing: 0) {
-                Text("max: ")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-                
-                if maxTemp == 0 {
-                    Text("-")
-                        .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                } else {
-                    RollingText(fontSize: 12, weight: .semibold, design: .monospaced, value: $maxTemp)
-                }
-                
-                Text("°C")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 12, weight: .bold, design: .monospaced))
-            }
+            PeakTempView(label: "min", peakTemp: $minTemp)
+            
+            PeakTempView(label: "max", peakTemp: $maxTemp)
             
             Spacer()
         }
