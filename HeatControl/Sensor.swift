@@ -1,16 +1,15 @@
 //
 //  Sensor.swift
-//  smc
+//  HeatControl
 //
-//  Created by Daniel Storm on 7/17/19.
-//  Copyright © 2019 Daniel Storm (github.com/DanielStormApps).
+//  Created by Illia Kniaziev on 10.06.2022.
 //
 
 import Foundation
 
-public typealias SensorKey = String
+typealias SensorKey = String
 
-private protocol GenericSensor: CaseIterable {
+protocol GenericSensor: CaseIterable {
     init?(key: SensorKey)
     var key: SensorKey { get }
     var index: Int { get }
@@ -18,10 +17,10 @@ private protocol GenericSensor: CaseIterable {
 }
 
 // MARK: - Sensor
-public enum Sensor {
+enum Sensor {
     
     // MARK: - CPU
-    public enum CPU: String, GenericSensor {
+    enum CPU: String, GenericSensor {
         case core_01 = "TC1C"
         case core_02 = "TC2C"
         case core_03 = "TC3C"
@@ -36,19 +35,19 @@ public enum Sensor {
         case peci = "TCXC"
         case proximity = "TC0P"
         
-        public init?(key: SensorKey) {
-            self.init(rawValue: key)
-        }
-        
-        public var key: SensorKey {
+        var key: SensorKey {
             return self.rawValue
         }
         
-        public var index: Int {
+        var index: Int {
             return CPU.allCases.firstIndex(of: self)!
         }
         
-        public var title: String {
+        init?(key: SensorKey) {
+            self.init(rawValue: key)
+        }
+        
+        var title: String {
             switch self {
             case .core_01: return "Core 1"
             case .core_02: return "Core 2"
@@ -68,25 +67,25 @@ public enum Sensor {
     }
     
     // MARK: - GPU
-    public enum GPU: String, GenericSensor {
+    enum GPU: String, GenericSensor {
         case diode = "TG0D"
         case heatsink = "TG0H"
         case peci = "TCGC"
         case proximity = "TG0P"
         
-        public init?(key: SensorKey) {
+        init?(key: SensorKey) {
             self.init(rawValue: key)
         }
         
-        public var key: SensorKey {
+        var key: SensorKey {
             return self.rawValue
         }
         
-        public var index: Int {
+        var index: Int {
             return GPU.allCases.firstIndex(of: self)!
         }
         
-        public var title: String {
+        var title: String {
             switch self {
             case .diode: return "Diode"
             case .heatsink: return "Heatsink"

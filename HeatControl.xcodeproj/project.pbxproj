@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		064646F428527A4500711D0B /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 064646F328527A4500711D0B /* smc.c */; };
-		064646F628527C5F00711D0B /* SMCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 064646F528527C5F00711D0B /* SMCObjC.m */; };
+		06102761289D4CC90071C29A /* RollingCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102760289D4CC90071C29A /* RollingCounter.swift */; };
 		0646471F285291AE00711D0B /* SwiftSMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646471E285291AE00711D0B /* SwiftSMC.swift */; };
 		064647212852984900711D0B /* SMCStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064647202852984900711D0B /* SMCStructure.swift */; };
 		06464723285298A500711D0B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06464722285298A500711D0B /* String+Extension.swift */; };
@@ -20,11 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		064646F128527A4400711D0B /* HeatControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeatControl-Bridging-Header.h"; sourceTree = "<group>"; };
-		064646F228527A4500711D0B /* smc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
-		064646F328527A4500711D0B /* smc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
-		064646F528527C5F00711D0B /* SMCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCObjC.m; sourceTree = "<group>"; };
-		064646F728527C7200711D0B /* SMCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCObjC.h; sourceTree = "<group>"; };
+		06102760289D4CC90071C29A /* RollingCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingCounter.swift; sourceTree = "<group>"; };
 		0646471E285291AE00711D0B /* SwiftSMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSMC.swift; sourceTree = "<group>"; };
 		064647202852984900711D0B /* SMCStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCStructure.swift; sourceTree = "<group>"; };
 		06464722285298A500711D0B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -49,17 +44,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0646471D2852916A00711D0B /* C-Code */ = {
-			isa = PBXGroup;
-			children = (
-				064646F528527C5F00711D0B /* SMCObjC.m */,
-				064646F728527C7200711D0B /* SMCObjC.h */,
-				064646F228527A4500711D0B /* smc.h */,
-				064646F328527A4500711D0B /* smc.c */,
-			);
-			path = "C-Code";
-			sourceTree = "<group>";
-		};
 		064FF4A628526A1C000F46A9 = {
 			isa = PBXGroup;
 			children = (
@@ -79,18 +63,17 @@
 		064FF4B128526A1C000F46A9 /* HeatControl */ = {
 			isa = PBXGroup;
 			children = (
-				064FF4C12852701E000F46A9 /* Info.plist */,
-				064FF4B228526A1C000F46A9 /* HeatControlApp.swift */,
-				0646471E285291AE00711D0B /* SwiftSMC.swift */,
-				064647242852A25F00711D0B /* Sensor.swift */,
-				06464722285298A500711D0B /* String+Extension.swift */,
-				064FF4B428526A1C000F46A9 /* ContentView.swift */,
 				064FF4B628526A1E000F46A9 /* Assets.xcassets */,
+				064FF4B428526A1C000F46A9 /* ContentView.swift */,
 				064FF4BB28526A1E000F46A9 /* HeatControl.entitlements */,
-				064646F128527A4400711D0B /* HeatControl-Bridging-Header.h */,
-				0646471D2852916A00711D0B /* C-Code */,
+				064FF4B228526A1C000F46A9 /* HeatControlApp.swift */,
+				064FF4C12852701E000F46A9 /* Info.plist */,
 				064FF4B828526A1E000F46A9 /* Preview Content */,
+				06102760289D4CC90071C29A /* RollingCounter.swift */,
+				064647242852A25F00711D0B /* Sensor.swift */,
 				064647202852984900711D0B /* SMCStructure.swift */,
+				06464722285298A500711D0B /* String+Extension.swift */,
+				0646471E285291AE00711D0B /* SwiftSMC.swift */,
 			);
 			path = HeatControl;
 			sourceTree = "<group>";
@@ -174,13 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				064646F428527A4500711D0B /* smc.c in Sources */,
 				064647252852A25F00711D0B /* Sensor.swift in Sources */,
 				06464723285298A500711D0B /* String+Extension.swift in Sources */,
-				064646F628527C5F00711D0B /* SMCObjC.m in Sources */,
 				064FF4B528526A1C000F46A9 /* ContentView.swift in Sources */,
 				064647212852984900711D0B /* SMCStructure.swift in Sources */,
 				064FF4B328526A1C000F46A9 /* HeatControlApp.swift in Sources */,
+				06102761289D4CC90071C29A /* RollingCounter.swift in Sources */,
 				0646471F285291AE00711D0B /* SwiftSMC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +292,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HeatControl/HeatControl.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -329,7 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.HeatControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "HeatControl/HeatControl-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -342,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HeatControl/HeatControl.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -361,7 +343,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.HeatControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "HeatControl/HeatControl-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

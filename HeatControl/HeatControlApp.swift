@@ -26,8 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         
-        SwiftSMC.shared.printSystemInformation()
-        
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
         if let statusButton = statusItem.button {
@@ -35,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             statusButton.action = #selector(togglePopover)
             
             popover = NSPopover()
-            popover.contentSize = NSSize(width: 300, height: 150)
+            popover.contentSize = NSSize(width: 300, height: 130)
             popover.behavior = .transient
             popover.contentViewController = NSHostingController(rootView: ContentView())
         }

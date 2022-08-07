@@ -27,7 +27,7 @@ class SwiftSMC {
             fatalError("Failed to start SMC. Result: \(result)")
         }
         
-        IOObjectRelease(SwiftSMC.connection)
+        IOObjectRelease(service)
     }
     
     private func disconnect() {
@@ -90,35 +90,10 @@ class SwiftSMC {
 
 extension SwiftSMC {
     func cpuTemperature(sensor: Sensor.CPU) -> Double? {
-//        guard let bytes = bytes(key: "TC0F") else { return nil }
-//
-//        let temp = Double(bytes.0 & 0x7F)
-//
-//        return temp
-        
-        guard let bytes: SMCBytes = bytes(key: Sensor.CPU.die.key) else { return nil }
+        guard let bytes: SMCBytes = bytes(key: sensor.key) else { return nil }
         
         let celsius: Double = Double(bytes.0 & 0x7F)
         
         return celsius
-    }
-    
-    public func printSystemInformation() {
-        print()
-        print("------------------")
-        print("System Information")
-        print("------------------")
-        
-        // CPU
-        print()
-        print("CPU (°C)")
-        for sensor in Sensor.CPU.allCases {
-            let cpuTemperature = SwiftSMC.shared.cpuTemperature(sensor: sensor)
-            print("\(sensor.title) [\(sensor.key)]: \(cpuTemperature ?? -1222.0)")
-        }
-        
-        print()
-        print("------------------")
-        print()
     }
 }
