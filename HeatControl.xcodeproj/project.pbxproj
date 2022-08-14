@@ -13,9 +13,10 @@
 		06464723285298A500711D0B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06464722285298A500711D0B /* String+Extension.swift */; };
 		064647252852A25F00711D0B /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064647242852A25F00711D0B /* Sensor.swift */; };
 		064FF4B328526A1C000F46A9 /* HeatControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FF4B228526A1C000F46A9 /* HeatControlApp.swift */; };
-		064FF4B528526A1C000F46A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FF4B428526A1C000F46A9 /* ContentView.swift */; };
+		064FF4B528526A1C000F46A9 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FF4B428526A1C000F46A9 /* MonitorView.swift */; };
 		064FF4B728526A1E000F46A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064FF4B628526A1E000F46A9 /* Assets.xcassets */; };
 		064FF4BA28526A1E000F46A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064FF4B928526A1E000F46A9 /* Preview Assets.xcassets */; };
+		06BAF2BA28A9169800C693DE /* MonitorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BAF2B928A9169800C693DE /* MonitorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +27,12 @@
 		064647242852A25F00711D0B /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		064FF4AF28526A1C000F46A9 /* HeatControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064FF4B228526A1C000F46A9 /* HeatControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatControlApp.swift; sourceTree = "<group>"; };
-		064FF4B428526A1C000F46A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		064FF4B428526A1C000F46A9 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
 		064FF4B628526A1E000F46A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		064FF4B928526A1E000F46A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		064FF4BB28526A1E000F46A9 /* HeatControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeatControl.entitlements; sourceTree = "<group>"; };
-		064FF4C12852701E000F46A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		064FF4C12852701E000F46A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06BAF2B928A9169800C693DE /* MonitorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +65,11 @@
 		064FF4B128526A1C000F46A9 /* HeatControl */ = {
 			isa = PBXGroup;
 			children = (
-				064FF4B628526A1E000F46A9 /* Assets.xcassets */,
-				064FF4B428526A1C000F46A9 /* ContentView.swift */,
-				064FF4BB28526A1E000F46A9 /* HeatControl.entitlements */,
-				064FF4B228526A1C000F46A9 /* HeatControlApp.swift */,
-				064FF4C12852701E000F46A9 /* Info.plist */,
+				06BAF2B628A9150A00C693DE /* Application */,
+				06BAF2B728A9154200C693DE /* Views */,
+				06BAF2B428A913FE00C693DE /* Resources */,
 				064FF4B828526A1E000F46A9 /* Preview Content */,
-				06102760289D4CC90071C29A /* RollingCounter.swift */,
-				064647242852A25F00711D0B /* Sensor.swift */,
-				064647202852984900711D0B /* SMCStructure.swift */,
-				06464722285298A500711D0B /* String+Extension.swift */,
-				0646471E285291AE00711D0B /* SwiftSMC.swift */,
+				06BAF2B328A912EF00C693DE /* SMC */,
 			);
 			path = HeatControl;
 			sourceTree = "<group>";
@@ -84,6 +80,45 @@
 				064FF4B928526A1E000F46A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06BAF2B328A912EF00C693DE /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				064647242852A25F00711D0B /* Sensor.swift */,
+				064647202852984900711D0B /* SMCStructure.swift */,
+				06464722285298A500711D0B /* String+Extension.swift */,
+				0646471E285291AE00711D0B /* SwiftSMC.swift */,
+			);
+			path = SMC;
+			sourceTree = "<group>";
+		};
+		06BAF2B428A913FE00C693DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				064FF4B628526A1E000F46A9 /* Assets.xcassets */,
+				064FF4BB28526A1E000F46A9 /* HeatControl.entitlements */,
+				064FF4C12852701E000F46A9 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		06BAF2B628A9150A00C693DE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				064FF4B428526A1C000F46A9 /* MonitorView.swift */,
+				064FF4B228526A1C000F46A9 /* HeatControlApp.swift */,
+				06BAF2B928A9169800C693DE /* MonitorViewModel.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		06BAF2B728A9154200C693DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06102760289D4CC90071C29A /* RollingCounter.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +194,10 @@
 			files = (
 				064647252852A25F00711D0B /* Sensor.swift in Sources */,
 				06464723285298A500711D0B /* String+Extension.swift in Sources */,
-				064FF4B528526A1C000F46A9 /* ContentView.swift in Sources */,
+				064FF4B528526A1C000F46A9 /* MonitorView.swift in Sources */,
 				064647212852984900711D0B /* SMCStructure.swift in Sources */,
 				064FF4B328526A1C000F46A9 /* HeatControlApp.swift in Sources */,
+				06BAF2BA28A9169800C693DE /* MonitorViewModel.swift in Sources */,
 				06102761289D4CC90071C29A /* RollingCounter.swift in Sources */,
 				0646471F285291AE00711D0B /* SwiftSMC.swift in Sources */,
 			);
@@ -291,7 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = HeatControl/HeatControl.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HeatControl/Resources/HeatControl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -301,7 +337,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HeatControl/Info.plist;
+				INFOPLIST_FILE = HeatControl/Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = HeatControl/HeatControl.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HeatControl/Resources/HeatControl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -333,7 +369,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HeatControl/Info.plist;
+				INFOPLIST_FILE = HeatControl/Resources/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,7 +14,7 @@ struct HeatControlApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MonitorView(viewModel: MonitorViewModel())
         }
     }
 }
@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             popover = NSPopover()
             popover.contentSize = NSSize(width: 300, height: 130)
             popover.behavior = .transient
-            popover.contentViewController = NSHostingController(rootView: ContentView())
+            popover.contentViewController = NSHostingController(rootView: MonitorView(viewModel: MonitorViewModel()))
         }
     }
     
